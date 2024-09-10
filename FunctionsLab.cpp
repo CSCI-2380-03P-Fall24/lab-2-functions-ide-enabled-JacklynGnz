@@ -11,16 +11,15 @@ using namespace std; // making life easier so that we do not need to use std::ci
 
 
 int locateSmallest(int array[], int start, int end){
-	int x = start;
-	int y = array[start];
+	int smallestValue = array[start];
+	int smallestIndex = start;
 	for (int i= start; i < end; i++) {
-		if (y > array[i]) {
-			y = array[i];
-			x = i;
+		if (smallestValue > array[i]) {
+			smallestIndex = i;
 		}
 		
 	}
-	return x; // fix this!
+	return smallestIndex; // fix this!
 }
 
 //Write the function called replaceVariable in the given interval such that 
@@ -45,7 +44,13 @@ void replaceVariable(int array[],int target, int start, int end) {
 //input: the array of integers and its size
 void printArray(int array[], int size) {
 	for(int i = 0; i < size; i++) {
-		cout << array[i] << ", ";
+		if(i < size -1) {
+			cout << array[i] << ", ";
+		}
+		else {
+			cout << array[i] << endl;
+		}
+		
 	}
 	return;
 }
