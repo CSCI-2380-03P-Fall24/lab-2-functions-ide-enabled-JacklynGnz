@@ -13,7 +13,7 @@ using namespace std; // making life easier so that we do not need to use std::ci
 int locateSmallest(int array[], int start, int end){
 	int x = start;
 	int y = array[start];
-	for (int i= start; i <= end; i++) {
+	for (int i= start; i < end; i++) {
 		if (y > array[i]) {
 			y = array[i];
 			x = i;
@@ -30,8 +30,8 @@ int locateSmallest(int array[], int start, int end){
 //     an int which is the ending point of searchspace
 // function: Search in the array from given start to end index and replace the given target value with 1000
 void replaceVariable(int array[],int target, int start, int end) {
-	for (int i = start; i <= end; i++) {
-		if(i == target) {
+	for (int i = start; i < end; i++) {
+		if(array[i] == target) {
 			array[i] = 1000;
 		}
 	}
