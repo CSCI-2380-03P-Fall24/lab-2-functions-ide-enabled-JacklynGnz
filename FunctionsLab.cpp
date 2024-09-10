@@ -13,8 +13,9 @@ using namespace std; // making life easier so that we do not need to use std::ci
 int locateSmallest(int array[], int start, int end){
 	int smallestValue = array[start];
 	int smallestIndex = start;
-	for (int i= start; i < end; i++) {
+	for (int i = start; i < end; i++) {
 		if (smallestValue > array[i]) {
+			smallestValue = array[i];
 			smallestIndex = i;
 		}
 		
@@ -71,5 +72,11 @@ void printArray(int array[], int size) {
 
 
 int sumOdds(int array[], int start, int end){
-	return -1;
+	int oddSum = 0;
+	for(int i = start; i < end; i++) {
+		if(array[i] % 2 != 0) {
+			oddSum += array[i];
+		}
+	}
+	return oddSum;
 }
